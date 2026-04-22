@@ -1,0 +1,161 @@
+h1{
+    font-size: xx-large;
+    height: 70px;
+    background-color: #ffbd87dc;
+    color: rgb(47, 56, 47);
+    
+    img.wrap{
+        float: left;
+        width: 70px;
+        height: 70px;
+        -webkit-shape-outside: url(images/catlute.jpg);
+        shape-outside: url(images/catlute.jpg);
+        border: 5px solid rgb(173, 128, 101);
+    }
+        
+}
+h2{
+    font-size: x-large;
+    height: 50px;
+    background-color: rgb(173, 128, 101);
+        color: rgb(47, 56, 47);
+    img.wrap{
+        float: left;
+        width: 50px;
+        height: 50px;
+         -webkit-shape-outside: url(images/European-lute.webp);
+        shape-outside: url(images/European-lute.webp);
+         border: 5px solid #ffbd87dc;}
+                 p{
+        color: rgb(47, 56, 47)
+    }
+    }
+
+main{
+    font-size: large;
+    height: 400px;
+    background-color: #ffbd87dc;
+    img.wrap{
+        float: left;
+        width: 300px;
+        height: 300px;
+        -webkit-shape-outside: url(images/European-lute.webp);
+        shape-outside: url(images/European-lute.webp);
+    }
+    display: grid;
+    grid-template-rows: 100px 400px 100px;
+    grid-template-columns: 1500px;
+    p{
+        color: rgb(68, 82, 69)
+    }
+}
+
+section{
+    font-size: large;
+    height: 400px;
+    background-color: #ffbd87dc;
+    img.wrap{
+        float: left;
+        width: 300px;
+        height: 300px;
+        -webkit-shape-outside: url(images/lute1.jpg);
+        shape-outside: url(images/lute1.jpg);
+    }
+    #imagelutes{
+        display: flex;
+        flex-direction: row;
+    }
+    .decor{
+        border: 10px solid rgb(173, 128, 101);
+        width: 300px;
+        height: 300px;
+    }
+        p{
+        color: rgb(68, 82, 69)
+    }
+}
+
+body{
+    color: burlywood
+}
+
+footer{
+    color: rgb(68, 82, 69);
+    background-color: burlywood;
+}
+
+@media screen and (max-width: 750px) {
+    h1{
+        font-size: medium;
+        height: 100px;
+        background-color: #ffbd87dc;
+        img.wrap{
+            float: left;
+            width: 50px;
+            height: 50px;
+            -webkit-shape-outside: url(images/catlute.jpg);
+            shape-outside: url(images/catlute.jpg);
+            border: 5px solid rgb(173, 128, 101);
+        }
+    }
+    h2{
+        font-size: medium;
+        height: 40px;
+        background-color: rgb(173, 128, 101);
+        img.wrap{
+            float: left;
+            width: 40px;
+            height: 40px;
+             -webkit-shape-outside: url(images/European-lute.webp);
+            shape-outside: url(images/European-lute.webp);
+             border: 5px solid #ffbd87dc;}
+        }
+
+    main{
+        font-size: smaller;
+        height: auto;
+        background-color: #ffbd87dc;
+        display: flex;
+        flex-direction: column;
+        img.wrap{
+            float: left;
+            width: 200px;
+            height: 200px;
+            -webkit-shape-outside: url(images/European-lute.webp);
+            shape-outside: url(images/European-lute.webp);
+        }
+            p{
+        color: rgb(68, 82, 69)
+    }
+    }
+     section{
+        font-size: smaller;
+        height: auto;
+        background-color: #ffbd87dc;
+        img.wrap{
+            float: left;
+            width: 200px;
+            height: 200px;
+            -webkit-shape-outside: url(images/lute1.jpg);
+            shape-outside: url(images/lute1.jpg);
+        }
+    }
+        #imagelutes{
+        display: flex;
+        flex-direction: column;
+    }
+    .decor{
+        border: 5px solid rgb(173, 128, 101);
+        width: 100px;
+        height: 100px;
+    }
+        p{
+        color: rgb(68, 82, 69)
+    }
+    
+    footer{
+    color: rgb(68, 82, 69);
+    background-color: burlywood;
+}
+}
+
