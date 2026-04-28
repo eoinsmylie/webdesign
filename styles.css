@@ -1,161 +1,301 @@
-h1{
-    font-size: xx-large;
-    height: 70px;
-    background-color: #ffbd87dc;
-    color: rgb(47, 56, 47);
+:root {
+    /* Color palette */
+    --color-primary: #ffbd87dc;
+    --color-secondary: rgb(173, 128, 101);
+    --color-text-dark: rgb(47, 56, 47);
+    --color-text-light: rgb(68, 82, 69);
+    --color-background: burlywood;
     
-    img.wrap{
-        float: left;
-        width: 70px;
-        height: 70px;
-        -webkit-shape-outside: url(images/catlute.jpg);
-        shape-outside: url(images/catlute.jpg);
-        border: 5px solid rgb(173, 128, 101);
-    }
-        
+    /* Font sizes */
+    --font-size-h1: xx-large;
+    --font-size-h2: x-large;
+    --font-size-main: large;
+    --font-size-p: 1rem;
+    
+    /* Spacing */
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
 }
-h2{
-    font-size: x-large;
-    height: 50px;
-    background-color: rgb(173, 128, 101);
-        color: rgb(47, 56, 47);
-    img.wrap{
-        float: left;
-        width: 50px;
-        height: 50px;
-         -webkit-shape-outside: url(images/European-lute.webp);
-        shape-outside: url(images/European-lute.webp);
-         border: 5px solid #ffbd87dc;}
-                 p{
-        color: rgb(47, 56, 47)
-    }
-    }
 
-main{
-    font-size: large;
-    height: 400px;
-    background-color: #ffbd87dc;
-    img.wrap{
-        float: left;
-        width: 300px;
-        height: 300px;
-        -webkit-shape-outside: url(images/European-lute.webp);
-        shape-outside: url(images/European-lute.webp);
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: var(--color-text-dark);
+    background-color: var(--color-background);
+    min-height: 100vh;
     display: grid;
-    grid-template-rows: 100px 400px 100px;
-    grid-template-columns: 1500px;
-    p{
-        color: rgb(68, 82, 69)
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+/* Header */
+header {
+    grid-area: header;
+    background-color: var(--color-primary);
+    padding: var(--spacing-md);
+}
+
+header h1 {
+    font-size: var(--font-size-h1);
+    height: 70px;
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+header h1 img.wrap {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border: 5px solid var(--color-secondary);
+    -webkit-shape-outside: url(images/catlute.jpg);
+    shape-outside: url(images/catlute.jpg);
+    float: none;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--color-secondary);
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+nav a {
+    color: var(--color-text-dark);
+    text-decoration: none;
+    font-weight: bold;
+    padding: var(--spacing-sm);
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--color-primary);
+    border-radius: 4px;
+}
+
+/* Main content */
+main {
+    grid-area: main;
+    font-size: var(--font-size-main);
+    background-color: var(--color-primary);
+    display: grid;
+    grid-template-rows: auto;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+}
+
+main h2 {
+    font-size: var(--font-size-h2);
+    height: 50px;
+    background-color: var(--color-secondary);
+    color: var(--color-text-dark);
+    display: flex;
+    align-items: center;
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+main h2 img.wrap {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    -webkit-shape-outside: url(images/European-lute.webp);
+    shape-outside: url(images/European-lute.webp);
+    border: 5px solid var(--color-primary);
+    margin-right: var(--spacing-md);
+    float: none;
+}
+
+main section {
+    background-color: var(--color-primary);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+}
+
+main section p {
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+    clear: both;
+}
+
+main section img.wrap {
+    float: left;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    -webkit-shape-outside: url(images/European-lute.webp);
+    shape-outside: url(images/European-lute.webp);
+    margin-right: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    margin-top: 0;
+}
+
+/* Clear float after first image in each paragraph */
+main section p + p {
+    clear: both;
+    padding-top: var(--spacing-md);
+}
+
+/* Image gallery */
+#imagelutes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+}
+
+.decor {
+    border: 10px solid var(--color-secondary);
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    color: var(--color-text-light);
+    background-color: var(--color-background);
+    padding: var(--spacing-md);
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    :root {
+        --font-size-h1: x-large;
+    }
+    
+    main section img.wrap {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .decor {
+        width: 250px;
+        height: 250px;
     }
 }
 
-section{
-    font-size: large;
-    height: 400px;
-    background-color: #ffbd87dc;
-    img.wrap{
-        float: left;
-        width: 300px;
-        height: 300px;
-        -webkit-shape-outside: url(images/lute1.jpg);
-        shape-outside: url(images/lute1.jpg);
+@media screen and (max-width: 900px) {
+    main {
+        padding: var(--spacing-md);
     }
-    #imagelutes{
-        display: flex;
-        flex-direction: row;
+    
+    main section img.wrap {
+        width: 200px;
+        height: 200px;
     }
-    .decor{
-        border: 10px solid rgb(173, 128, 101);
-        width: 300px;
-        height: 300px;
+    
+    .decor {
+        width: 200px;
+        height: 200px;
     }
-        p{
-        color: rgb(68, 82, 69)
+    
+    #imagelutes {
+        flex-direction: column;
+        align-items: center;
     }
-}
-
-body{
-    color: burlywood
-}
-
-footer{
-    color: rgb(68, 82, 69);
-    background-color: burlywood;
 }
 
 @media screen and (max-width: 750px) {
-    h1{
-        font-size: medium;
-        height: 100px;
-        background-color: #ffbd87dc;
-        img.wrap{
-            float: left;
-            width: 50px;
-            height: 50px;
-            -webkit-shape-outside: url(images/catlute.jpg);
-            shape-outside: url(images/catlute.jpg);
-            border: 5px solid rgb(173, 128, 101);
-        }
-    }
-    h2{
-        font-size: medium;
-        height: 40px;
-        background-color: rgb(173, 128, 101);
-        img.wrap{
-            float: left;
-            width: 40px;
-            height: 40px;
-             -webkit-shape-outside: url(images/European-lute.webp);
-            shape-outside: url(images/European-lute.webp);
-             border: 5px solid #ffbd87dc;}
-        }
-
-    main{
-        font-size: smaller;
-        height: auto;
-        background-color: #ffbd87dc;
-        display: flex;
-        flex-direction: column;
-        img.wrap{
-            float: left;
-            width: 200px;
-            height: 200px;
-            -webkit-shape-outside: url(images/European-lute.webp);
-            shape-outside: url(images/European-lute.webp);
-        }
-            p{
-        color: rgb(68, 82, 69)
-    }
-    }
-     section{
-        font-size: smaller;
-        height: auto;
-        background-color: #ffbd87dc;
-        img.wrap{
-            float: left;
-            width: 200px;
-            height: 200px;
-            -webkit-shape-outside: url(images/lute1.jpg);
-            shape-outside: url(images/lute1.jpg);
-        }
-    }
-        #imagelutes{
-        display: flex;
-        flex-direction: column;
-    }
-    .decor{
-        border: 5px solid rgb(173, 128, 101);
-        width: 100px;
-        height: 100px;
-    }
-        p{
-        color: rgb(68, 82, 69)
+    :root {
+        --font-size-h1: medium;
+        --font-size-h2: large;
+        --font-size-main: smaller;
     }
     
-    footer{
-    color: rgb(68, 82, 69);
-    background-color: burlywood;
+    header h1 {
+        height: auto;
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+    
+    header h1 img.wrap {
+        width: 50px;
+        height: 50px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    main h2 {
+        height: auto;
+        padding: var(--spacing-sm);
+        text-align: center;
+    }
+    
+    main h2 img.wrap {
+        display: none;
+    }
+    
+    main section {
+        padding: var(--spacing-sm);
+    }
+    
+    main section img.wrap {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        float: none;
+        display: block;
+        margin: 0 auto var(--spacing-md);
+    }
+    
+    .decor {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+    }
+    
+    #imagelutes {
+        flex-direction: column;
+        align-items: center;
+    }
 }
+
+@media screen and (max-width: 480px) {
+    :root {
+        --font-size-h1: small;
+        --font-size-h2: medium;
+    }
+    
+    main section img.wrap {
+        max-width: 150px;
+    }
+    
+    .decor {
+        max-width: 150px;
+    }
 }
 
